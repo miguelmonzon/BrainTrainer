@@ -1,6 +1,7 @@
 package com.example.robpercival.braintrainer;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.view.Menu;
@@ -145,20 +146,27 @@ public class MainActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.on_boarding);
 
         startButton = (Button)findViewById(R.id.startButton);
-        sumTextView = (TextView)findViewById(R.id.sumTextView);
-        button0 = (Button)findViewById(R.id.button0);
-        button1 = (Button)findViewById(R.id.button1);
-        button2 = (Button)findViewById(R.id.button2);
-        button3 = (Button)findViewById(R.id.button3);
-        resultTextView = (TextView)findViewById(R.id.resultTextView);
-        pointsTextView = (TextView)findViewById(R.id.pointsTextView);
-        timerTextView = (TextView)findViewById(R.id.timerTextView);
-        playAgainButton = (Button)findViewById(R.id.playAgainButton);
-        gameRelativeLayout = (RelativeLayout)findViewById(R.id.gameRelativeLayout);
+//        sumTextView = (TextView)findViewById(R.id.sumTextView);
+//        button0 = (Button)findViewById(R.id.button0);
+//        button1 = (Button)findViewById(R.id.button1);
+//        button2 = (Button)findViewById(R.id.button2);
+//        button3 = (Button)findViewById(R.id.button3);
+//        resultTextView = (TextView)findViewById(R.id.resultTextView);
+//        pointsTextView = (TextView)findViewById(R.id.pointsTextView);
+//        timerTextView = (TextView)findViewById(R.id.timerTextView);
+//        playAgainButton = (Button)findViewById(R.id.playAgainButton);
+//        gameRelativeLayout = (RelativeLayout)findViewById(R.id.gameRelativeLayout);
 
+        startButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(final View view) {
+                Intent intent = new Intent(MainActivity.this, Game.class);
+                startActivity(intent);
+            }
+        });
 
     }
 
