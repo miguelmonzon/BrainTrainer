@@ -46,18 +46,25 @@ public class Game extends Activity {
         timerTextView = (TextView)findViewById(R.id.timerTextView);
         playAgainButton = (Button)findViewById(R.id.playAgainButton);
 
-        playAgain(findViewById(R.id.playAgainButton));
+        playAgain();
+
+        playAgainButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(final View view) {
+                playAgain();
+            }
+        });
 
     }
 
-    private void playAgain(final View view) {
+    private void playAgain() {
         score = 0;
         numberOfQuestions = 0;
 
         timerTextView.setText("30s");
         pointsTextView.setText("0/0");
         resultTextView.setText("");
-        playAgainButton.setVisibility(View.INVISIBLE);
+        playAgainButton.setEnabled(false);
 
         generateQuestion();
 
@@ -73,7 +80,7 @@ public class Game extends Activity {
             @Override
             public void onFinish() {
 
-                playAgainButton.setVisibility(View.VISIBLE);
+                playAgainButton.setEnabled(true);
                 timerTextView.setText("0s");
                 resultTextView.setText("Your score: " + Integer.toString(score) + "/" + Integer.toString(numberOfQuestions));
 

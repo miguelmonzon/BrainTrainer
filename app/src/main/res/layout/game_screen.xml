@@ -133,9 +133,7 @@
             android:id="@+id/playAgainButton"
             android:layout_below="@+id/resultTextView"
             android:layout_alignStart="@+id/sumTextView"
-            android:layout_marginTop="25dp"
-            android:onClick="playAgain"
-            android:visibility="invisible" />
+            android:layout_marginTop="25dp" />
     </RelativeLayout>
 
 
