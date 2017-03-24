@@ -61,6 +61,11 @@ public class Game extends Activity {
         score = 0;
         numberOfQuestions = 0;
 
+        button0.setEnabled(true);
+        button1.setEnabled(true);
+        button2.setEnabled(true);
+        button3.setEnabled(true);
+
         timerTextView.setText("30s");
         pointsTextView.setText("0/0");
         resultTextView.setText("");
@@ -80,6 +85,10 @@ public class Game extends Activity {
             @Override
             public void onFinish() {
 
+                button0.setEnabled(false);
+                button1.setEnabled(false);
+                button2.setEnabled(false);
+                button3.setEnabled(false);
                 playAgainButton.setEnabled(true);
                 timerTextView.setText("0s");
                 resultTextView.setText("Your score: " + Integer.toString(score) + "/" + Integer.toString(numberOfQuestions));
