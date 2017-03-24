@@ -5,7 +5,6 @@
                 android:paddingRight="@dimen/activity_horizontal_margin"
                 android:paddingTop="@dimen/activity_vertical_margin"
                 android:paddingBottom="@dimen/activity_vertical_margin" tools:context=".MainActivity"
-                android:onClick="start"
                 android:nestedScrollingEnabled="false">
 
     <Button
@@ -18,7 +17,6 @@
         android:textSize="80sp"
         android:padding="40dp"
         android:backgroundTint="#ff0eff31"
-        android:onClick="start"
         android:visibility="visible" />
 
 </RelativeLayout>
